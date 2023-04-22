@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { Card, Button, Form, Input, Table, Modal, message } from 'antd';
 import { PlusOutlined, SearchOutlined } from '@ant-design/icons'
 import MyUpLoad from '../components/myUpLoad';
+import axios from 'axios';
 
 function StudentType() {
 
   const [isShow, setIsShow] = useState(false)
   const [myForm] = Form.useForm();
+
+  axios.get('/api/getData').then(_d => console.log(_d.data))
 
   return (
     <div>
