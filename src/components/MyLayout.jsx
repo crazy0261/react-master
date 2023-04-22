@@ -203,7 +203,7 @@ const MyLayout = ({ children }) => {
                     }}
                 >
                     {/* 面包屑导航 */}
-                    <Breadcrumb>
+                    <Breadcrumb style={{margin: '0 0 20px 0'}}>
                         {
                             navurl.map(n => {
                                 return <Breadcrumb.Item key={n.key}>{n.label}</Breadcrumb.Item>
