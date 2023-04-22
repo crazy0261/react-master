@@ -3,13 +3,22 @@ import { Card, Button, Form, Input, Table, Modal, message } from 'antd';
 import { PlusOutlined, SearchOutlined } from '@ant-design/icons'
 import MyUpLoad from '../components/myUpLoad';
 import axios from 'axios';
+import { get } from '../utils/request';
 
 function StudentType() {
 
   const [isShow, setIsShow] = useState(false)
   const [myForm] = Form.useForm();
 
-  axios.get('/api/getData').then(_d => console.log(_d.data))
+  const [tableData, setTableData] = useState();
+
+  // 简易版
+  // axios.get('/api/getData').then(_d => console.log(_d.data))
+
+  // 封装版
+  get('/getData').then(_d => {
+    setTableData(_d.data)
+  })
 
   return (
     <div>
@@ -36,23 +45,30 @@ function StudentType() {
             <Button type='primary' icon={<SearchOutlined />}></Button>
           </Form.Item>
         </Form>
-        <Table columns={[{
-          title: '序号',
-          width: 80
-        }, {
-          title: '姓名',
-          width: 80
-        }, {
-          title: '照片',
-          width: 120
-        }, {
-          title: '成绩',
-          width: 80
-        }, {
-          title: '操作',
-          width: 80
-        }
-        ]}>
+        <Table
+          dataSource={tableData}
+          columns={[{
+            title: '序号',
+            width: 80,
+            rende(n, m, k) {
+              return <span>{k + 1}</span>
+            }
+          }, {
+            title: '姓名',
+            dataIndex: 'name'
+          }, {
+            title: '照片',
+            rende(n, m, k) {
+              return <img className='listImg' src={n.img}></img>
+            }
+          }, {
+            title: '描述 ',
+            dataIndex: 'desc'
+          }, {
+            title: '操作',
+            width: 80
+          }
+          ]}>
 
         </Table>
       </Card>
