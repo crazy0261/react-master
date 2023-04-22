@@ -29,7 +29,7 @@ function LogOut() {
               md: {
                 span:4
               }
-            }}
+            }} 
             onFinish={(n) =>{
               console.log(n)
               message.success("登录成功")
