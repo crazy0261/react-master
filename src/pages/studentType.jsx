@@ -50,7 +50,7 @@ function StudentType() {
           columns={[{
             title: '序号',
             width: 80,
-            rende(n, m, k) {
+            render(n, m, k) {
               return <span>{k + 1}</span>
             }
           }, {
