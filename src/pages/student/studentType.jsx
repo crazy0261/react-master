@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Card, Button, Form, Input, Table, Modal, message } from 'antd';
+import { Card, Button, Form, Input, Table, Modal, message,Pagination } from 'antd';
 import { PlusOutlined, SearchOutlined,UndoOutlined } from '@ant-design/icons'
 import MyUpLoad from '../../components/myUpLoad';
 import axios from 'axios';
 import { get } from '../../utils/request';
+import MyFooter from '../../components/MyFooter';
 
 function StudentType() {
 
@@ -37,7 +38,7 @@ function StudentType() {
         }
 
       >
-        <Form layout='inline'>
+        <Form layout='inline' >
           <Form.Item label="姓名">
             <Input placeholder='请输入查询的名称' />
           </Form.Item>
@@ -52,6 +53,7 @@ function StudentType() {
           dataSource={tableData}
           // 增加页面滚动条
           scroll={{x:'max-content'}}
+          style={{marginTop:'10px'}}
           columns={[{
             title: '序号',
             width: 80,
@@ -112,6 +114,8 @@ function StudentType() {
           </Form.Item>
         </Form>
       </Modal>
+      {/* 分页 */}
+      <Pagination hideOnSinglePage={true} defaultCurrent={1} total={1000} style={{textAlign:'right',marginTop:'20px'}}/>
     </div>
 
   )
