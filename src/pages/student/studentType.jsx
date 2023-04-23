@@ -4,7 +4,6 @@ import { PlusOutlined, SearchOutlined,UndoOutlined } from '@ant-design/icons'
 import MyUpLoad from '../../components/myUpLoad';
 import axios from 'axios';
 import { get } from '../../utils/request';
-import MyFooter from '../../components/MyFooter';
 
 function StudentType() {
 
@@ -115,7 +114,7 @@ function StudentType() {
         </Form>
       </Modal>
       {/* 分页 */}
-      <Pagination hideOnSinglePage={true} defaultCurrent={1} total={1000} style={{textAlign:'right',marginTop:'20px'}}/>
+      <Pagination hideOnSinglePage={true} defaultCurrent={1} total={tableData.lenght} style={{textAlign:'right',marginTop:'20px'}}/>
     </div>
 
   )

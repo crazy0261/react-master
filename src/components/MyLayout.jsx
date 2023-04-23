@@ -180,7 +180,7 @@ const MyLayout = ({ children }) => {
                             height: 64,
                         }}
                     />
-                    <span className='titleDiv'>测试成长管理系统-react</span>
+                    <span className='titleDiv'>测试成长记管理系统-react</span>
                     <Dropdown
                         menu={{
                             items, onClick
