@@ -7,7 +7,7 @@ import { ConfigProvider } from 'antd';
 import 'antd/dist/reset.css';
 import zhCN from 'antd/locale/zh_CN';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import LogOut from './pages/logOut';
+import LogOut from './pages/logOut/logOut';
 
 
 

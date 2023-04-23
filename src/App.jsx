@@ -1,10 +1,10 @@
 import MyLayout from "./components/MyLayout"
 import {Routes,Route} from 'react-router-dom'
-import StudentType from "./pages/studentType"
-import StudentList from "./pages/studentList"
-import ClassType from "./pages/classType"
-import ClassList from "./pages/classList"
-import CourseMenu from "./pages/courseMenu"
+import StudentType from "./pages/student/studentType"
+import StudentList from "./pages/student/studentList"
+import ClassType from "./pages/class/classType"
+import ClassList from "./pages/class/classList"
+import CourseMenu from "./pages/courseMenu/courseMenu"
 
 function App() {
 

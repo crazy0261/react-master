@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Card, Button, Form, Input, Table, Modal, message } from 'antd';
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons'
-import MyUpLoad from '../components/myUpLoad';
+import { PlusOutlined, SearchOutlined,UndoOutlined } from '@ant-design/icons'
+import MyUpLoad from '../../components/myUpLoad';
 import axios from 'axios';
-import { get } from '../utils/request';
+import { get } from '../../utils/request';
 
 function StudentType() {
 
@@ -41,12 +41,17 @@ function StudentType() {
           <Form.Item label="姓名">
             <Input placeholder='请输入查询的名称' />
           </Form.Item>
-          <Form.Item label="姓名">
-            <Button type='primary' icon={<SearchOutlined />}></Button>
+          <Form.Item >
+            <Button type='primary' icon={<SearchOutlined />}>查询</Button>
+          </Form.Item>
+          <Form.Item >
+            <Button  icon={<UndoOutlined />}>重置</Button>
           </Form.Item>
         </Form>
         <Table
           dataSource={tableData}
+          // 增加页面滚动条
+          scroll={{x:'max-content'}}
           columns={[{
             title: '序号',
             width: 80,

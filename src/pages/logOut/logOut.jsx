@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Row ,Card,Button,Form,Input, message} from 'antd';
-import logo from '../assets/logo.png'
+import logo from '../../assets/logo.png'
 import {useNavigate} from 'react-router-dom'
 
 function LogOut() {
