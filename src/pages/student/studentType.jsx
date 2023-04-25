@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Button, Form, Input, Table, Modal, message,Pagination } from 'antd';
 import { PlusOutlined, SearchOutlined,UndoOutlined } from '@ant-design/icons'
-import MyUpLoad from '../../components/myUpLoad';
+import MyUpLoad from '../../components/student/MyUpLoad';
 import axios from 'axios';
 import { get } from '../../utils/request';
 
