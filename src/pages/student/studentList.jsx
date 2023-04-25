@@ -3,7 +3,10 @@ import MyTimeAxis from '../../components/student/MyTimeAxis'
 
 function StudentList() {
   return (
-    <div>学生列表
+    <div>
+      <h1>学生列表</h1>
+      <br/>
+      
       <MyTimeAxis/>
 
     </div>
