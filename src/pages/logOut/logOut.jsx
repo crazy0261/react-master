@@ -10,7 +10,7 @@ function LogOut() {
       <Col
         md={{
           span:6,
-          push:9
+          push:8
         }}
         xs={{
           span:22,
@@ -24,10 +24,10 @@ function LogOut() {
           margin:'40px auto'
         }} />
 
-        <Card title="成长管理系统" headStyle={{textAlign:'center'}}>
+        <Card title="成长管理系统" headStyle={{textAlign:'center'}}  >
             <Form labelCol={{
               md: {
-                span:4
+                span:6
               }
             }} 
             onFinish={(n) =>{
