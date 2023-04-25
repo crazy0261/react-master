@@ -1,4 +1,4 @@
-import MyLayout from "./components/MyLayout"
+import MyLayout from "./components/logOut/MyLayout"
 import {Routes,Route} from 'react-router-dom'
 import StudentType from "./pages/student/studentType"
 import StudentList from "./pages/student/studentList"

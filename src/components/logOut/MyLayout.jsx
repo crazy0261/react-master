@@ -7,7 +7,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme, Dropdown, message, Breadcrumb } from 'antd';
 import { Children, useState, useEffect } from 'react';
-import logoImger from '../assets/logo.png'
+import logoImger from '../..//assets/logo.png'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 const { Header, Sider, Content } = Layout;
