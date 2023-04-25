@@ -114,7 +114,8 @@ function StudentType() {
         </Form>
       </Modal>
       {/* 分页 */}
-      <Pagination hideOnSinglePage={true} defaultCurrent={1} total={tableData.lenght} style={{textAlign:'right',marginTop:'20px'}}/>
+      {/* <Pagination hideOnSinglePage={true} defaultCurrent={1} total={tableData.lenght} style={{textAlign:'right',marginTop:'20px'}}/> */}
+      <Pagination hideOnSinglePage={true} defaultCurrent={1} total={100} showSizeChanger showQuickJumper showTotal={(total) => `共 ${total} 条`} style={{textAlign:'right',marginTop:'20px'}}/>
     </div>
 
   )
