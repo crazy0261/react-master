@@ -45,9 +45,6 @@ function ClassType() {
           style={{
             maxWidth: 600,
           }}
-          initialValues={{
-            remember: true,
-          }}
           autoComplete="off"
           form={form}
         >
@@ -79,11 +76,11 @@ function ClassType() {
 
           <Form.Item
             label="是否开启"
-            // name="remember"
-            name="remember"
-            valuePropName="checked"
+            name="enble"
+            // 设置默认值，string 写啥传啥，{}可设置布尔值
+            initialValue = {false}
           >
-            <Switch defaultChecked checkedChildren onChange={onChange} />
+            <Switch defaultChecked   onChange={onChange} />
           </Form.Item>
 
         </Form>
