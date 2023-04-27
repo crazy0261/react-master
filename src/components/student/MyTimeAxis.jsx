@@ -26,7 +26,7 @@ const MyTimeAxis = () => (
       <Space wrap>
         {/* 报错味修改 */}
         {/* <Button type="primary" value={value} style={{marginLeft:"10%"}} icon={<SearchOutlined />} onClick={(s)=>setValue(e.target.value)}> */}
-        <Button type="primary"  style={{marginLeft:"10%"}} icon={<SearchOutlined />} onClick={(s)=>setValue(e.target.value)}>
+        <Button type="primary"  style={{marginLeft:"10%"}} icon={<SearchOutlined />} onClick={onSearch}>
           查询
         </Button>
         <Button style={{marginLeft:"10%"}} icon={<RedoOutlined onClick={()=>console.log("请求成功清楚内容")}/>}>
@@ -37,16 +37,16 @@ const MyTimeAxis = () => (
     <Timeline style={{marginTop:'25px'}}
       items={[
         {
-          children: 'Create a services site 2015-09-01',
+          children: '事件一',
         },
         {
-          children: 'Solve initial network problems 2015-09-01',
+          children: '事件二',
         },
         {
-          children: 'Technical testing 2015-09-01',
+          children: '事件三',
         },
         {
-          children: 'Network problems being solved 2015-09-01',
+          children: '事件四',
         },
       ]}
     />

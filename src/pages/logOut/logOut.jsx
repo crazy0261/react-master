@@ -32,8 +32,14 @@ function LogOut() {
             }} 
             onFinish={(n) =>{
               console.log(n)
-              message.success("登录成功")
-              navigate("/admin/student_menu/student_type")
+              if(n.userName === "admin" && n.password === "123456"){
+                message.success("登录成功")
+                navigate("/admin/student_menu/student_type")
+              }else{
+                message.error("请检查用户名或密码！")
+              }
+              
+
             }}
             >
 
@@ -60,6 +66,7 @@ function LogOut() {
                 }}
                 >登录</Button> 
               </Form.Item>
+              <span style={{color:"#D3D3D3"}}>账号：admin,密码：123456</span>
             </Form>
           </Card> 
       </Col>
