@@ -2,7 +2,7 @@ import React from 'react'
 
 function ClassList() {
   return (
-    <div>班级列表</div>
+    <div>班级列表1</div>
   )
 }
 
