@@ -10,3 +10,4 @@ const instanceAxios = axios.create({
 })
 
 export const get = (url,params ={}) => instanceAxios.get(url,{params})
+export const post = (url,json ={}) => instanceAxios.post(url,{json})
