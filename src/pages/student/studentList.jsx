@@ -61,7 +61,7 @@ function StudentList() {
         }}
         bordered={false}
       >
-        <Space direction="horizontal">
+        <Space direction="horizontal" >
           <span>站端订单号：</span>
           <Input style={{ width: "160%" }} placeholder="请输入站端订单号" />
           <Space wrap>

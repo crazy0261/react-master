@@ -40,7 +40,7 @@ const MyTimeAxis = (props) => (
               height: 500,
             }}
           >
-            <ReactJosn src={props.dataArr} theme="summerfruit:inverted" displayDataTypes="false" collapsed="true" iconStyle="triangle" indentWidth={4} style={{ WebkitBoxOrient: "vertical" }} />
+            <ReactJosn src={props.dataArr} name={false}  theme="summerfruit:inverted" displayDataTypes="false" collapsed="true" iconStyle="triangle" indentWidth={4} style={{ WebkitBoxOrient: "vertical" }} />
           </Card>
         </Col>
       </Space>
