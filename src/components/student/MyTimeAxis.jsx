@@ -20,7 +20,6 @@ const suffix = (
 
 const MyTimeAxis = (props) => (
   <>
-
     <Row gutter={16} style={{ marginTop: '25px' }} >
       <Col span={6}>
         <Card
@@ -30,18 +29,18 @@ const MyTimeAxis = (props) => (
           }}
         >
           <Timeline style={{ marginTop: '25px' }}
-            items={[ {},{} ]}
+            items={[{},{}]}
           />
         </Card>
       </Col>
       <Col span={8}>
         <Card
           style={{
-            width: 300,
+            width: "230%",
             height: "auto",
           }}
         >
-          <ReactJosn src={{ "name": "zhangsan", "ssdfdh": [{ "shangsh": "12341" }] }} theme="summerfruit:inverted" Collapsed="false" iconStyle="spqare" indentWidth={4} />
+          <ReactJosn src={props} theme="summerfruit:inverted" Collapsed="false" iconStyle="spqare" indentWidth={4}  />
         </Card>
       </Col>
     </Row>
