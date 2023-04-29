@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import MyTimeAxis from '../../components/student/MyTimeAxis'
 import { Space, Input, Button, Card } from 'antd';
 import { SearchOutlined, RedoOutlined } from '@ant-design/icons';
 import axios from 'axios';
-
 
 const { Search } = Input;
 
@@ -13,7 +12,9 @@ const { Search } = Input;
 
 
 function StudentList() {
-  const [dataArr,setdataArr] = useState([]);
+  const [dataArr, setdataArr] = useState([]);
+  const [nameArr, setnameArr] = useState([]);
+  
 
 
   const fetchData = () => {
@@ -29,9 +30,23 @@ function StudentList() {
       }
     }).then((res) => {
       setdataArr(res.data)
-      console.log(dataArr)
+      getName(res.data)
     })
   }
+  const getName = (value) => {
+    let nameArrList = [];
+    value.forEach(v => {
+      nameArrList.push(
+        {
+          children: `${v.name}(${v.time})`,
+
+        })
+    }
+    )
+    setnameArr(nameArrList)
+  }
+
+
 
 
   const onSearch = (value) => {
@@ -44,7 +59,7 @@ function StudentList() {
         style={{
           width: "50%",
         }}
-        bordered ={false}
+        bordered={false}
       >
         <Space direction="horizontal">
           <span>站端订单号：</span>
@@ -55,7 +70,7 @@ function StudentList() {
             <Button type="primary" style={{ marginLeft: "140%" }} icon={<SearchOutlined />} onClick={onSearch}>
               查询
             </Button>
-            <Button style={{ marginLeft: "140%" }} icon={<RedoOutlined onClick={() => console.log("请求成功清楚内容")} />}>
+            <Button style={{ marginLeft: "140%" }} icon={<RedoOutlined />} onClick={() => {setdataArr([]);setnameArr([])}} >
               重置
             </Button>
           </Space>
@@ -63,7 +78,7 @@ function StudentList() {
       </Card>
 
 
-      <MyTimeAxis dataArr={dataArr}/>
+      <MyTimeAxis dataArr={dataArr} nameArr={nameArr}/>
 
 
     </div>
