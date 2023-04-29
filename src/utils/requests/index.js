@@ -4,9 +4,9 @@ import axios from "axios"
 const coverFormData = (obj) => {
 	let data = Object.keys(obj.data).map(item => {
 		let value = obj.data[item];
-		if(_.isArray(value) || _.isObject(value)){
-			value = JSON.stringify(value)
-		}
+		// if(_.isArray(value) || _.isObject(value)){
+		// 	value = JSON.stringify(value)
+		// }
 		return encodeURIComponent(item) + '=' + encodeURIComponent(value);
 	}).join('&');
  
