@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MyTimeAxis from '../../components/student/MyTimeAxis'
-import { Space, Input, Button, Card } from 'antd';
+import { Space, Input, Button, Card, message } from 'antd';
 import { SearchOutlined, RedoOutlined } from '@ant-design/icons';
 import axios from 'axios';
 
@@ -31,6 +31,8 @@ function StudentList() {
     }).then((res) => {
       setdataArr(res.data)
       getName(res.data)
+    }).catch((e)=>{
+      message.error("未知错误")
     })
   }
   const getName = (value) => {
