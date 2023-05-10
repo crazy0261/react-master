@@ -17,11 +17,9 @@ const onOk = (value)=>{
 const MyTimeAxis = (props) => (
   <>
     <Row gutter={16}  >
-      <Space>
         <Col span={7}>
           <Card
             style={{
-              width:380,
               height: "auto",
             }}
           >
@@ -36,14 +34,14 @@ const MyTimeAxis = (props) => (
         <Col span={7}>
           <Card
             style={{
-              width: "500%",
-              height: 500,
+              width: "600px",
+              maxHeight: "550px",
+              overflow:'auto'
             }}
           >
-            <ReactJosn src={props.dataArr} name={false}  theme="summerfruit:inverted" displayDataTypes="false" collapsed="true" iconStyle="triangle" indentWidth={4} style={{ WebkitBoxOrient: "vertical" }} />
+            <ReactJosn  src={props.dataArr} name={false}  theme="summerfruit:inverted" displayDataTypes="false" collapsed="true" iconStyle="triangle" indentWidth={4} style={{ WebkitBoxOrient: "vertical"}} />
           </Card>
         </Col>
-      </Space>
     </Row>
 
 

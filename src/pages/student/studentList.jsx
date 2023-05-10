@@ -24,9 +24,9 @@ function StudentList() {
       baseURL: 'http://localhost:5173/api',
       headers: { "content-type": "application/json" },
       data: {
-        "omsStationOrderId": "20230420210641YUAA32605",
-        "startTime": "2023-04-20 21:00:00",
-        "endTime": "2023-04-20 21:10:00"
+        "omsStationOrderId": "20230510190425YUADY1263",
+        "startTime": "2023-05-10 19:00:50",
+        "endTime": "2023-05-10 19:10:50"
       }
     }).then((res) => {
       setdataArr(res.data)
