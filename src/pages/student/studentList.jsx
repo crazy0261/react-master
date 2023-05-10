@@ -7,14 +7,11 @@ import axios from 'axios';
 const { Search } = Input;
 
 
-
-
-
-
 function StudentList() {
   const [dataArr, setdataArr] = useState([]);
   const [nameArr, setnameArr] = useState([]);
-  
+  const [card,setCard] = useState(true);
+
 
 
   const fetchData = () => {
@@ -31,7 +28,7 @@ function StudentList() {
     }).then((res) => {
       setdataArr(res.data)
       getName(res.data)
-    }).catch((e)=>{
+    }).catch((e) => {
       message.error("未知错误")
     })
   }
@@ -48,6 +45,13 @@ function StudentList() {
     setnameArr(nameArrList)
   }
 
+  useEffect(()=>{
+    if(dataArr.length >0){
+        setCard(false)
+    }else{
+      setCard(true)
+    }
+  })
 
 
 
@@ -58,9 +62,6 @@ function StudentList() {
   return (
     <div>
       <Card
-        style={{
-          width: "50%",
-        }}
         bordered={false}
       >
         <Space direction="horizontal" >
@@ -72,15 +73,18 @@ function StudentList() {
             <Button type="primary" style={{ marginLeft: "140%" }} icon={<SearchOutlined />} onClick={onSearch}>
               查询
             </Button>
-            <Button style={{ marginLeft: "140%" }} icon={<RedoOutlined />} onClick={() => {setdataArr([]);setnameArr([])}} >
+            <Button style={{ marginLeft: "140%" }} icon={<RedoOutlined />} onClick={() => { setdataArr([]); setnameArr([]) }} >
               重置
             </Button>
           </Space>
         </Space>
+      </Card> 
+      
+      
+      <Card hidden={card} bordered={false} style={{maxHeight:'550px',marginTop:'10px'}}>
+        <MyTimeAxis dataArr={dataArr} nameArr={nameArr} />
       </Card>
 
-
-      <MyTimeAxis dataArr={dataArr} nameArr={nameArr}/>
 
 
     </div>

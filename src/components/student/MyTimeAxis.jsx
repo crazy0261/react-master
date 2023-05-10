@@ -21,25 +21,28 @@ const MyTimeAxis = (props) => (
           <Card
             style={{
               height: "auto",
+              width:"120%",
+              overflow:'auto'
             }}
           >
             <Timeline 
-            style={{ marginTop: '10px' }}
+            style={{ width:'100%' }}
               items={
                 props.nameArr
               }
             />
           </Card>
         </Col>
-        <Col span={7}>
+        <Col span={12}>
           <Card
             style={{
-              width: "600px",
-              maxHeight: "550px",
+              maxWidth: "750px",
+              maxHeight: "500px",
+              marginLeft:"60px",
               overflow:'auto'
             }}
           >
-            <ReactJosn  src={props.dataArr} name={false}  theme="summerfruit:inverted" displayDataTypes="false" collapsed="true" iconStyle="triangle" indentWidth={4} style={{ WebkitBoxOrient: "vertical"}} />
+            <ReactJosn  src={props.dataArr} name={false}  theme="summerfruit:inverted" displayDataTypes="false"  iconStyle="triangle" indentWidth={4} style={{ WebkitBoxOrient: "vertical"}} />
           </Card>
         </Col>
     </Row>
